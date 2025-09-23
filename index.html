@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vida Aquátiica</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""
+/>
+
+</head>
+<body>
+
+  <!-- MENU -->
+  <div id="header">
+  <div class="navbar container">
+    <a class="brand" href="#home">VIDA <span>AQUÁTICA</span></a>
+    <button class="menu-toggle" aria-label="Abrir menu" id="menuToggle">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <nav id="menu" aria-label="Navegação principal">
+       <ul class="nav-list">
+    <li><a href="#home">Home</a></li>
+
+    <li class="has-sub">
+      <a href="#vida-marinha">Vida Marinha</a>
+      <ul class="submenu">
+        <li><a href="sobreVidaMarinha.html">Sobre a Vida Marinha</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#ongs">ONGs e Redes</a></li>
+    <li><a href="#acoes">Ações Comunitárias</a></li>
+
+    <li class="has-sub">
+      <a href="#educacao">Educação e Estudos</a>
+      <ul class="submenu">
+        <li><a href="educacao-estudos.html">Conteúdo de Educação & Estudos</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+    </nav>
+  </div>
+</div>
+
+  <!-- HOME -->
+ <section id="home" class="hero-section">
+  <div class="hero-content">
+    <h1 class="title">VIDA AQUÁTICA</h1>
+    <div class="purpose-box">
+      <p>Nosso propósito é apresentar ações e projetos que preservam a vida marinha.
+      Acesse ONGs, pesquisas, mutirões e entenda a importância da conservação dos oceanos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VIDA MARINHA -->
+<section id="vida-marinha" class="vida-section section">
+  <div class="container vida-grid">
+    <img src="./imagens/underwater-marine-life-stockcake.jpg" alt="baleias" /> 
+    <div class="vida-texto">
+      <h2>Sobre a Vida Marinha</h2>
+      <p>
+        A vida marinha abrange todos os organismos vivos que habitam os oceanos e mares do planeta. Desde o plâncton microscópico até as baleias azuis gigantes, incluindo peixes, crustáceos, moluscos, corais e muitos outros. Essa vasta biodiversidade é essencial para o equilíbrio do ecossistema marinho e para o bem-estar do planeta, regulando o clima, fornecendo alimentos e serviços ecossistêmicos.
+      </p>
+
+      <!-- CTA centralizado -->
+      <div class="vida-cta">
+        <a class="btn btn-ocean" href="sobreVidaMarinha.html" aria-label="Ir para a página Sobre a Vida Marinha">
+          Saiba mais sobre a Vida Marinha
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <div class="linha"></div>
+
+  <!-- ONGS -->
+  <section id="ongs" class="section-ongs">
+    <div class="container">
+      <h2>ONGs e Redes Envolvidas</h2>
+      <div class="carousel-container">
+        <div class="carousel" id="ongCarousel">
+          <div class="card-ong">
+            <h3>Instituto Argonauta</h3>
+            <p>Instituto Argonauta protege a vida marinha em SP; resgata e reabilita animais, faz pesquisa e educação ambiental, monitora praias e mobiliza voluntários.</p>
+            <div class="card-links">
+              <a href="https://institutoargonauta.org/new/seja-um-argonauta">Como ajudar</a>
+              <a href="https://institutoargonauta.org/new/">Perfil Oficial</a>
+            </div>
+          </div>
+          <div class="card-ong">
+            <h3>Sea Shepherd Brasil</h3>
+            <p>Sea Shepherd Brasil defende os oceanos com ações diretas, ciência cidadã e educação; combate pesca ilegal e plástico mobilizando voluntários.</p>
+            <div class="card-links">
+              <a href="https://seashepherd.org.br/junte-se-a-nos">Como ajudar</a>
+              <a href="https://seashepherd.org.br/">Perfil Oficial</a>
+            </div>
+          </div>
+          <div class="card-ong">
+            <h3>Mirpuri Foundation</h3>
+            <p>Mirpuri Foundation protege o oceano com pesquisa, educação e projeto Seabin, unindo parceiros para reduzir plástico e cuidar de ecossistemas.</p>
+            <div class="card-links">
+              <a href="https://mirpurifoundation.org/programs/marine-conservation">Como ajudar</a>
+              <a href="https://mirpurifoundation.org/">Perfil Oficial</a>
+            </div>
+          </div>
+          <div class="card-ong">
+              <h3>Vale Verde</h3>
+              <p>Esta ONG realiza o plantio de mudas de árvores nativas da Mata Atlântica para a preservação das nascentes, em colaboração com escolas locais. </p>
+              <div class="card-links">
+                <a href="https://www.instagram.com/ongvaleverde">Como ajudar</a>
+                <a href="https://www.instagram.com/ongvaleverde">Perfil Oficial</a>
+              </div>
+          </div>
+          <div class="card-ong">
+              <h3>Eco Villa</h3>
+              <p>Uma área de proteção ambiental onde são realizadas ações de reflorestamento e preservação, com a participação de escolas e outras organizações.</p>
+              <div class="card-links">
+                <a href="https://www.ecovilasustentar.eco.br/voluntariado">Como ajudar</a>
+                <a href="https://www.ecovilasustentar.eco.br/">Perfil Oficial</a>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="map-wrapper">
+        <h3 style="margin: 12px 0 8px;">Onde atuam (exemplos)</h3>
+        <div id="ongMap"></div>
+        <p class="map-note">Dica: clique em “Ver no mapa” nos cards para focar o marcador.</p>
+      </div>
+    </div>
+  </section>
+
+   <div class="linha"></div>
+
+  <!-- AÇÕES COMUNITÁRIAS -->
+  <section id="acoes" class="section-acao">
+    <div class="container">
+      <h2>Ações Comunitárias e Participação</h2>
+      <div class="carousel-container">
+      <div class="carousel" id="acoesCarousel">
+        <!-- os cards serão injetados via JS -->
+      </div>
+    </div>
+
+    <!-- MAPA -->
+    <div class="map-wrapper" style="margin-top: 18px;">
+      <h3 style="margin: 12px 0 8px;">Onde acontecem (exemplos)</h3>
+      <div id="acoesMap"></div>
+      <p class="map-note">Dica: clique em “Ver no mapa” nos cards para focar o marcador.</p>
+    </div>
+        
+    </div>
+  </section>
+
+   <div class="linha"></div>
+
+  <!-- EDUCAÇÃO E ESTUDOS -->
+  <section id="educacao" class="section-edu edu-zig">
+  <h2>Conteúdo de Educação e Estudos</h2>
+
+  <!-- Card 1 — imagem à esquerda -->
+  <article class="edu-item">
+    <div class="edu-img">
+      <img src="./imagens/7f24684df8e24eb5c3ce142a91bc07e6.webp" alt="Mares, rios e oceanos">
+    </div>
+    <div class="edu-text">
+      <h3>Mares, rios e oceanos</h3>
+      <p>Entenda as diferenças e como tudo se conecta pelo ciclo da água. Como mares e oceanos regulam o clima e influenciam a nossa vida.</p>
+      <a class="btn" href="./educacao-estudos.html#mares-rios-oceanos">Ler mais</a>
+    </div>
+  </article>
+
+  <!-- Card 2 — imagem à direita -->
+  <article class="edu-item reverse">
+    <div class="edu-img">
+      <img src="./imagens/Ecossistema-marinho-2.jpg" alt="Ecossistemas marinhos">
+    </div>
+    <div class="edu-text">
+      <h3>Ecossistemas da vida marinha</h3>
+      <p>Recifes, manguezais, pradarias marinhas, costões e zonas pelágicas. Veja onde estão e por que importam (com mapa interativo).</p>
+      <a class="btn" href="./educacao-estudos.html#ecossistemas">Explorar ecossistemas</a>
+    </div>
+  </article>
+
+  <!-- Card 3 — imagem à esquerda -->
+  <article class="edu-item">
+    <div class="edu-img">
+      <img src="./imagens/depositphotos_256606100-stock-photo-underwater-global-problem-with-plastic.jpg" alt="Espécies em risco">
+    </div>
+    <div class="edu-text">
+      <h3>Espécies em risco</h3>
+      <p>Vaquita, tartarugas marinhas, corais e tubarões. Saiba o que está acontecendo e como ajudar.</p>
+      <a class="btn" href="./educacao-estudos.html#especies-risco">Conhecer casos</a>
+    </div>
+  </article>
+</section>
+
+
+  <!-- CONTATO -->
+<section id="contato" class="section-contato">
+  <div class="container">
+    <h2>Contato e Conexões</h2>
+
+    <form id="contactForm" action="https://formspree.io/f/SEU_ENDPOINT" method="POST" novalidate>
+      <div class="form-row">
+        <div class="field">
+          <label for="name">Seu nome</label>
+          <input id="name" name="name" type="text" placeholder="Seu nome" autocomplete="name" required minlength="2" />
+        </div>
+        <div class="field">
+          <label for="email">Seu e-mail</label>
+          <input id="email" name="email" type="email" placeholder="Seu e-mail" autocomplete="email" required />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="subject">Assunto</label>
+        <input id="subject" name="subject" type="text" placeholder="Ex.: Parceria, Voluntariado, Dúvidas" />
+      </div>
+
+      <div class="field">
+        <label for="message">Sua mensagem</label>
+        <textarea id="message" name="message" placeholder="Escreva sua mensagem..." required minlength="10"></textarea>
+        <small class="help">Mínimo de 10 caracteres.</small>
+      </div>
+
+      <label class="checkbox">
+        <input type="checkbox" id="consent" required />
+        <span>Autorizo o contato para responder minha mensagem.</span>
+      </label>
+
+      <!-- Honeypot anti-spam (deixe escondido) -->
+      <input type="text" name="_gotcha" id="gotcha" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true" />
+
+      <!-- Feedback -->
+      <div class="feedback" role="status" aria-live="polite" id="formFeedback"></div>
+
+      <button type="submit" id="sendBtn">
+        <span class="btn-label">Enviar</span>
+        <span class="spinner" aria-hidden="true"></span>
+      </button>
+
+      <noscript>
+        <p class="noscript">Ative o JavaScript para enviar pelo formulário. Sem JS, 
+          <a href="mailto:seuemail@exemplo.com?subject=Contato%20via%20site">clique aqui</a> para enviar por e-mail.</p>
+      </noscript>
+    </form>
+
+    <aside class="quick-links">
+      <h3>Conectar com ONGs parceiras</h3>
+      <ul>
+        <li><a href="https://www.instagram.com/ongvaleverde/" target="_blank" rel="noopener">Vale Verde</a></li>
+        <li><a href="https://www.ecovilasustentar.eco.br/" target="_blank" rel="noopener">Eco Villa (Ecovila Sustentar)</a></li>
+        <li><a href="https://institutoargonauta.org/new/fale-conosco/" target="_blank" rel="noopener">Instituto Argonauta</a></li>
+        <li><a href="https://seashepherd.org.br/contato/" target="_blank" rel="noopener">Sea Shepherd Brasil</a></li>
+        <li><a href="https://mirpurifoundation.org/contact/" target="_blank" rel="noopener">Mirpuri Foundation</a></li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+  <footer>
+    <p>&copy; 2025 Renan Lima. </p>
+    <p>
+        <a href="https://github.com/relima-code">GitHub</a> |
+        <a href="https://www.linkedin.com/in/renan-felipe-318a32272/">Linkedin</a>
+    </p>
+</footer>
+
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin="">
+  </script>
+  <script>
+(() => {
+  const form = document.getElementById('contactForm');
+  const btn = document.getElementById('sendBtn');
+  const feedback = document.getElementById('formFeedback');
+  const endpoint = form.getAttribute('action'); // Formspree endpoint
+  const mailtoFallback = 'mailto:seuemail@exemplo.com';
+
+  function setBusy(state) {
+    btn.disabled = state;
+    form.classList.toggle('is-sending', state);
+  }
+
+  function showMessage(msg, ok = true) {
+    feedback.textContent = msg;
+    feedback.className = 'feedback ' + (ok ? 'ok' : 'err');
+  }
+
+  function validate() {
+    if (!form.reportValidity()) return false;
+    const name = form.name.value.trim();
+    const message = form.message.value.trim();
+    const consent = document.getElementById('consent').checked;
+
+    if (name.length < 2) { showMessage('Informe seu nome.', false); return false; }
+    if (message.length < 10) { showMessage('Mensagem muito curta (mínimo 10 caracteres).', false); return false; }
+    if (!consent) { showMessage('Confirme a autorização de contato.', false); return false; }
+
+    // Honeypot: se preenchido, aparenta sucesso e cancela envio
+    if (form._gotcha.value) { showMessage('Mensagem enviada!', true); return false; }
+    return true;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!validate()) return;
+
+    setBusy(true);
+    try {
+      const fd = new FormData(form);
+      fd.append('_subject', form.subject.value || 'Contato via site');
+      fd.append('_replyto', form.email.value);
+
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: fd
+      });
+
+      if (res.ok) {
+        form.reset();
+        showMessage('Obrigado! Recebemos sua mensagem e entraremos em contato em breve.');
+      } else {
+        // Fallback: abre cliente de e-mail do usuário com a mensagem preenchida
+        showMessage('Não foi possível enviar pelo formulário. Abrindo seu e-mail…', false);
+        const body = encodeURIComponent(
+          `Nome: ${form.name.value}\nE-mail: ${form.email.value}\nAssunto: ${form.subject.value}\n\n${form.message.value}`
+        );
+        window.location.href = `${mailtoFallback}?subject=Contato%20via%20site&body=${body}`;
+      }
+    } catch (err) {
+      showMessage('Erro de conexão. Tente novamente ou envie por e-mail.', false);
+    } finally {
+      setBusy(false);
+    }
+  });
+})();
+</script>
+
+  <script src="./index.js"></script>
+</body>
+</html>

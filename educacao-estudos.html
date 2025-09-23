@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Educação & Estudos — Vida Aquática</title>
+  <meta name="description" content="Mares, rios e oceanos · Ecossistemas marinhos · Curiosidades ecológicas · Espécies em risco · Ações pessoais. Página visual com mapa, cards e quiz." />
+  <link rel="stylesheet" href="./css/educacao-estudos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+  <!-- Leaflet (mapa) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="wrap container">
+      <a class="brand" href="#top">VIDA <span>AQUÁTICA</span></a>
+      <a class="back" href="./index.html#educacao"><i class="fa-solid fa-arrow-left"></i> Voltar à página inicial</a>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="inner">
+      <h1>Conteúdo de Educação e Estudos</h1>
+      <p class="lead"><strong>Sobre a Vida Marinha (introdução)</strong><br>A vida marinha inclui todos os organismos que habitam mares e oceanos — do plâncton e das algas aos grandes predadores, como tubarões e baleias. Ela sustenta serviços ecossistêmicos vitais (alimento, regulação do clima, proteção costeira) e está no centro da chamada Cultura Oceânica: entender como o oceano influencia a gente e como nossas ações influenciam o oceano. A base global de educação oceânica é organizada em 7 princípios (Ocean Literacy), excelente guia para escolas e projetos comunitários.</p>
+    </div>
+  </section>
+
+  <!-- Subnav -->
+  <nav class="subnav" aria-label="Seções desta página">
+    <div class="tabs container" id="tabs">
+      <a href="#mares-rios-oceanos" class="active">Mares · Rios · Oceanos</a>
+      <a href="#ecossistemas">Ecossistemas</a>
+      <a href="#curiosidades">Curiosidades</a>
+      <a href="#especies-risco">Espécies em risco</a>
+      <a href="#acoes">O que posso fazer</a>
+      <a href="#quiz">Quiz</a>
+      <a href="#referencias">Referências</a>
+    </div>
+  </nav>
+
+  <!-- Subtema 1 -->
+  <section id="mares-rios-oceanos" class="section">
+    <div class="container">
+      <h2>Mares, Rios e Oceanos — diferenças rápidas</h2>
+      <p class="card">Resumo para começar: <strong>rios</strong> (água doce, correm para mares/lagos/outros rios), <strong>mares</strong> (águas salgadas parcialmente cercadas por terra) e <strong>oceanos</strong> (grandes massas interconectadas que cobrem ~70% do planeta). Todos se conectam pelo <em>ciclo hidrológico</em> e influenciam clima, biodiversidade e nossa vida cotidiana.</p>
+      <div class="def-grid">
+        <div class="def"><h3>Rios</h3><p>Curso de água doce que flui por gravidade até mares/lagos/outros rios. Essenciais para abastecimento, agricultura e transporte.</p></div>
+        <div class="def"><h3>Mares</h3><p>Águas salgadas cercadas por terra em parte; trocam massas de água com os oceanos; influenciam o clima regional.</p></div>
+        <div class="def"><h3>Oceanos</h3><p>Oceano global com várias bacias (Atlântico, Pacífico, Índico, Ártico, Antártico). Regula temperatura e armazena carbono.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subtema 2: Ecossistemas -->
+  <section id="ecossistemas" class="section">
+    <div class="container">
+      <h2>Ecossistemas da vida marinha (o “mapa” para estudar)</h2>
+
+      <div class="eco-grid" style="margin-top:12px">
+        <!-- Coluna esquerda: botões + links de referência -->
+        <div class="eco-btns">
+          <div class="eco-btn" data-eco="coral">
+            <i class="fa-solid fa-water"></i>
+            Recifes de coral — “cidades submarinas” de alta biodiversidade; sensíveis ao aquecimento e à acidificação.
+            <a href="https://www.iucn.org/our-work/topic/coral-reefs" target="_blank" rel="noopener" style="margin-left:6px">(IUCN)</a>
+          </div>
+
+          <div class="eco-btn" data-eco="mangue">
+            <i class="fa-solid fa-tree"></i>
+            Manguezais &amp; estuários — berçários, reduzem erosão, armazenam “carbono azul”.
+            <a href="https://brasilescola.uol.com.br/geografia/manguezal.htm" target="_blank" rel="noopener" style="margin-left:6px">(Brasil Escola)</a>
+          </div>
+          
+          <div class="eco-btn" data-eco="pradarias">
+            <i class="fa-solid fa-seedling"></i>
+            Pradarias de fanerógamas — capturam carbono e abrigam juvenis.
+          </div>
+          
+          <div class="eco-btn" data-eco="costoes">
+            <i class="fa-solid fa-mountain"></i>
+            Costões rochosos / mares de plataforma — ex.: Laje de Santos (SP, área protegida).
+            <a href="https://guiadeareasprotegidas.sp.gov.br/ap/parque-estadual-marinho-laje-de-santos/" target="_blank" rel="noopener">(Guia de Áreas Protegidas)</a>
+          </div>
+          
+          <div class="eco-btn" data-eco="pelagico">
+            <i class="fa-solid fa-ship"></i>
+            Pelágico e zonas profundas — cadeias alimentares baseadas no plâncton.
+            <a href="https://www.havochvatten.se/en/start.html" target="_blank" rel="noopener">(SwAM)</a>
+          </div>
+        </div>
+
+        <!-- Coluna direita: preview (imagem + texto) + mapa -->
+        <div>
+          <!-- Preview -->
+          <div id="ecoPreview" class="card" style="margin-bottom:10px; display:none">
+            <figure style="margin:0">
+              <img id="ecoImg" src="" alt="">
+              <figcaption id="ecoCaption"></figcaption>
+            </figure>
+          </div>
+
+          <div id="ecoMap"></div>
+          <p class="card" style="margin-top:10px">
+            Clique nos botões para ver fotos e curiosidades. Marcadores no mapa localizam exemplos (SP + Brasil).
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subtema 3: Curiosidades e "superpoderes" -->
+  <section id="curiosidades" class="section">
+    <div class="container">
+      <h2>Curiosidades e “superpoderes” ecológicos</h2>
+      <div class="cards" style="margin-top:12px">
+        <article class="card">
+          <h3><i class="fa-solid fa-whale"></i> Baleias fertilizam o oceano (whale pump)</h3>
+          <p>Movem nutrientes das profundezas para a superfície, impulsionando o fitoplâncton, base da cadeia e aliado do clima.</p>
+          <p class="why"><strong>Por que importa:</strong> produtividade pesqueira, sequestro de carbono, turismo.</p>
+          <p style="margin-top:6px"><a href="https://www.imf.org/en/Publications/fandd/issues/2019/12/natures-solution-to-climate-change-chami" target="_blank" rel="noopener">IMF</a> · <a href="https://pmc.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">PMC</a></p>
+        </article>
+        <article class="card">
+          <h3><i class="fa-solid fa-fish"></i> Peixes-papagaio “fabricam” areia</h3>
+          <p>Raspam algas/coral morto; trituram carbonato e excretam areia fina, ajudando praias e recifes.</p>
+          <p class="why"><strong>Por que importa:</strong> saúde dos recifes, praias mais estáveis.</p>
+          <p style="margin-top:6px"><a href="https://www.barrierreef.org/news/news/five-fascinating-facts-about-parrotfish" target="_blank" rel="noopener">Great Barrier Reef Foundation</a> · <a href="https://manoa.hawaii.edu/exploringourfluidearth/physical/coastal-interactions/beaches-and-sand/weird-science-parrotfish-and-sand" target="_blank" rel="noopener">Univ. Hawai‘i</a></p>
+        </article>
+        <article class="card">
+          <h3><i class="fa-solid fa-otter"></i> Lontras-marinhas: “espécie-chave”</h3>
+          <p>Controlam ouriços, favorecendo florestas de kelp e armazenando carbono.</p>
+          <p class="why"><strong>Por que importa:</strong> equilíbrio trófico, proteção costeira.</p>
+          <p style="margin-top:6px"><a href="https://www.fws.gov/sites/default/files/documents/The%20keystone%20species%20role%20of%20the%20sea%20otter%2007302021.pdf" target="_blank" rel="noopener">U.S. FWS</a></p>
+        </article>
+        <article class="card">
+          <h3><i class="fa-solid fa-shark"></i> Tubarões como predadores de topo</h3>
+          <p>Regulam populações e ajudam a manter recifes saudáveis; quedas afetam todo o ecossistema.</p>
+          <p class="why"><strong>Por que importa:</strong> estabilidade das teias alimentares.</p>
+          <p style="margin-top:6px"><a href="https://sanctuaries.noaa.gov/news/2025/how-sharks-keep-the-ocean-healthy.html" target="_blank" rel="noopener">NOAA Sanctuaries</a> · <a href="https://www.worldwildlife.org/stories/sharks-are-key-to-the-health-of-our-oceans-and-climate" target="_blank" rel="noopener">WWF</a></p>
+        </article>
+        <article class="card">
+          <h3><i class="fa-solid fa-asterisk"></i> Pepinos-do-mar reciclam nutrientes</h3>
+          <p>A bioturbação e a excreção alteram fluxos de oxigênio e nitrogênio no sedimento, influenciando a produtividade.</p>
+          <p class="why"><strong>Por que importa:</strong> reciclagem de nutrientes, saúde do fundo marinho.</p>
+          <p style="margin-top:6px"><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0050031" target="_blank" rel="noopener">PLOS ONE</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10354198/" target="_blank" rel="noopener">PubMed/PMC</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subtema 4: Espécies em risco -->
+  <section id="especies-risco" class="section">
+    <div class="container">
+      <h2>Espécies em risco e o que está acontecendo</h2>
+      <div class="risk-grid" style="margin-top:12px">
+        <article class="risk">
+          <h3>Vaquita (Phocoena sinus)</h3>
+          <p>Uma das espécies mais ameaçadas do planeta, restrita ao Golfo da Califórnia; redes de emalhe são a principal ameaça.</p>
+          <a class="tag" href="https://iwc.int/about-whales/intro-to-population-status/status-of-whales-graphics/summary-vaquita" target="_blank" rel="noopener">IWC · CR</a>
+        </article>
+        <article class="risk">
+          <h3>Tartaruga-de-pente (Eretmochelys imbricata)</h3>
+          <p>Captura incidental, coleta de ovos e perda de habitat entre as ameaças; globalmente <em>Criticamente Ameaçada</em>.</p>
+          <a class="tag" href="https://en.wikipedia.org/wiki/Hawksbill_sea_turtle" target="_blank" rel="noopener">Wikipedia · CR</a>
+        </article>
+        <article class="risk">
+          <h3>Tartaruga-verde (Chelonia mydas)</h3>
+          <p>Status global <em>Ameaçada</em>, variando por subpopulação.</p>
+          <a class="tag" href="https://www.iucn-mtsg.org/statuses" target="_blank" rel="noopener">IUCN-SSC MTSG</a>
+        </article>
+        <article class="risk">
+          <h3>Corais <em>elkhorn</em> e <em>staghorn</em></h3>
+          <p>Criticamente ameaçados no Caribe; aquecimento, doenças e poluição são fatores-chave.</p>
+          <a class="tag" href="https://www.iucnredlist.org/" target="_blank" rel="noopener">IUCN Red List</a>
+        </article>
+        <article class="risk">
+          <h3>Tubarão-martelo-entalhado (<em>Sphyrna lewini</em>)</h3>
+          <p>Unidades populacionais no Atlântico Leste e Pacífico Leste listadas como <em>Endangered</em> nos EUA.</p>
+          <a class="tag" href="https://www.fisheries.noaa.gov/species/scalloped-hammerhead-shark" target="_blank" rel="noopener">NOAA Fisheries</a>
+        </article>
+      </div>
+      <p class="card" style="margin-top:12px">Pressões humanas: sobrepesca, redes fantasmas, destruição de habitats costeiros (manguezais, recifes), poluição (incluindo plásticos/microplásticos), aquecimento e acidificação dos oceanos — mudanças que já alteram comportamento e sobrevivência de várias espécies. <a href="https://iucn.org/our-work/topic/oceans-and-climate-change/ocean-warming" target="_blank" rel="noopener">IUCN</a> · <a href="https://www.theguardian.com/environment/article/2024/sep/09/sharks-deserting-coral-reefs-climate-crisis-heating-oceans-study" target="_blank" rel="noopener">The Guardian (estudo)</a></p>
+    </div>
+  </section>
+
+  <!-- Ações pessoais -->
+  <section id="acoes" class="section">
+    <div class="container">
+      <h2>O que cada pessoa pode fazer</h2>
+      <div class="checklist">
+        <label class="check"><input type="checkbox" class="t" data-p="20"> Consumir pescado de origem legal e sustentável; respeitar o defeso.</label>
+        <label class="check"><input type="checkbox" class="t" data-p="20"> Reduzir plásticos descartáveis e descartar corretamente resíduos.</label>
+        <label class="check"><input type="checkbox" class="t" data-p="20"> Apoiar AMPs, projetos de restauração (manguezais/recifes) e ciência cidadã.</label>
+        <label class="check"><input type="checkbox" class="t" data-p="20"> Aprender e ensinar os 7 princípios de Ocean Literacy.</label>
+        <label class="check"><input type="checkbox" class="t" data-p="20"> Engajar a escola/comunidade em ações locais (mutirões, monitoramentos).</label>
+      </div>
+      <div class="progress" style="margin-top:10px"><span id="pgBar"></span></div>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz" class="section">
+    <div class="container">
+      <h2>Quiz — Perguntas rápidas</h2>
+      <p class="card">Teste seu conhecimento! Responda às questões e veja seu resultado. (Este quiz é educativo e não coleta dados.)</p>
+
+      <div class="quiz" style="margin-top:12px">
+        <!-- Q1 MC -->
+        <div class="q card" data-type="mc">
+          <h3><i class="fa-solid fa-circle-question"></i> 1) Qual opção <em>não</em> é um serviço ecossistêmico típico dos oceanos?</h3>
+          <div class="options" style="margin-top:8px; display:grid; gap:8px">
+            <label><input type="radio" name="q1" data-correct="false"> Produção de oxigênio</label>
+            <label><input type="radio" name="q1" data-correct="false"> Regulação do clima</label>
+            <label><input type="radio" name="q1" data-correct="true"> Formação de montanhas</label>
+            <label><input type="radio" name="q1" data-correct="false"> Proteção natural das costas</label>
+          </div>
+        </div>
+
+        <!-- Q2 MC -->
+        <div class="q card" data-type="mc">
+          <h3><i class="fa-solid fa-circle-question"></i> 2) Sobre recifes de coral, assinale a correta:</h3>
+          <div class="options" style="margin-top:8px; display:grid; gap:8px">
+            <label><input type="radio" name="q2" data-correct="false"> São resistentes ao aquecimento e à acidificação.</label>
+            <label><input type="radio" name="q2" data-correct="true"> Abrigam alta biodiversidade e são sensíveis a mudanças climáticas.</label>
+            <label><input type="radio" name="q2" data-correct="false"> Não têm relação com turismo ou pesca.</label>
+            <label><input type="radio" name="q2" data-correct="false"> Não interagem com peixes-papagaio.</label>
+          </div>
+        </div>
+
+        <!-- Q3 MC -->
+        <div class="q card" data-type="mc">
+          <h3><i class="fa-solid fa-circle-question"></i> 3) Sobre baleias e o clima:</h3>
+          <div class="options" style="margin-top:8px; display:grid; gap:8px">
+            <label><input type="radio" name="q3" data-correct="true"> A "whale pump" recicla nutrientes e pode favorecer o fitoplâncton.</label>
+            <label><input type="radio" name="q3" data-correct="false"> Baleias reduzem a produtividade do plâncton ao remover nutrientes.</label>
+            <label><input type="radio" name="q3" data-correct="false"> Baleias não têm papel ecológico relevante.</label>
+          </div>
+        </div>
+
+        <!-- Rápidas (VF com chips) -->
+        <div class="q card" data-type="vf">
+          <h3><i class="fa-solid fa-bolt"></i> Perguntas rápidas (V/F)</h3>
+          <div class="quick" data-correct="V">
+            <p><strong>1.</strong> Manguezais podem reduzir erosão costeira.</p>
+            <div class="chips">
+              <div class="chip" data-val="V"><i class="fa-solid fa-check"></i> Verdadeiro</div>
+              <div class="chip" data-val="F"><i class="fa-solid fa-xmark"></i> Falso</div>
+            </div>
+          </div>
+          <div class="quick" data-correct="F" style="margin-top:10px">
+            <p><strong>2.</strong> Peixes-papagaio aumentam a erosão das praias.</p>
+            <div class="chips">
+              <div class="chip" data-val="V"><i class="fa-solid fa-check"></i> Verdadeiro</div>
+              <div class="chip" data-val="F"><i class="fa-solid fa-xmark"></i> Falso</div>
+            </div>
+          </div>
+          <div class="quick" data-correct="F" style="margin-top:10px">
+            <p><strong>3.</strong> A população de vaquitas (Phocoena sinus) está crescendo.</p>
+            <div class="chips">
+              <div class="chip" data-val="V"><i class="fa-solid fa-check"></i> Verdadeiro</div>
+              <div class="chip" data-val="F"><i class="fa-solid fa-xmark"></i> Falso</div>
+            </div>
+          </div>
+          <div class="quick" data-correct="V" style="margin-top:10px">
+            <p><strong>4.</strong> Pradarias de fanerógamas capturam carbono.</p>
+            <div class="chips">
+              <div class="chip" data-val="V"><i class="fa-solid fa-check"></i> Verdadeiro</div>
+              <div class="chip" data-val="F"><i class="fa-solid fa-xmark"></i> Falso</div>
+            </div>
+          </div>
+        </div>
+
+        <button id="quizSubmit"><i class="fa-solid fa-paper-plane"></i> Ver resultado</button>
+        <div class="scorebox" id="quizScore"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Referências -->
+  <section id="referencias" class="section">
+    <div class="container">
+      <h2>Referências e leituras</h2>
+      <div class="refs" style="margin-top:12px">
+        <a href="https://iucn.org/resources/issues-brief/coral-reefs-and-climate-change" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> IUCN — Recifes & clima</a>
+        <a href="https://iucn.org/our-work/topic/oceans-and-climate-change/ocean-warming" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> IUCN — Aquecimento do oceano</a>
+        <a href="https://brasilescola.uol.com.br/brasil/mangues.htm" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> Brasil Escola — Manguezais</a>
+        <a href="https://guiadeareasprotegidas.sp.gov.br/ap/parque-estadual-marinho-laje-de-santos/" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> Parque Marinho Laje de Santos</a>
+        <a href="https://www.havochvatten.se/en/start.html" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> Swedish Agency for Marine & Water Management</a>
+        <a href="https://www.imf.org/en/Publications/fandd/issues/2019/12/natures-solution-to-climate-change-chami" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> IMF — Nature’s Solution to Climate Change</a>
+        <a href="https://manoa.hawaii.edu/exploringourfluidearth/physical/coastal-interactions/beaches-and-sand/weird-science-parrotfish-and-sand" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> Univ. Hawai‘i — Parrotfish & Sand</a>
+        <a href="https://www.barrierreef.org/news/news/five-fascinating-facts-about-parrotfish" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> Great Barrier Reef Foundation — Parrotfish</a>
+        <a href="https://www.fws.gov/sites/default/files/documents/The%20keystone%20species%20role%20of%20the%20sea%20otter%2007302021.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> U.S. FWS — Sea otter keystone</a>
+        <a href="https://sanctuaries.noaa.gov/news/2025/how-sharks-keep-the-ocean-healthy.html" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> NOAA Sanctuaries — Sharks & ocean health</a>
+        <a href="https://www.worldwildlife.org/stories/sharks-are-key-to-the-health-of-our-oceans-and-climate" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> WWF — Sharks & climate</a>
+        <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0050031" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> PLOS ONE — Sea cucumbers & nutrients</a>
+        <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10354198/" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> PubMed/PMC — Sea cucumbers bioturbation</a>
+        <a href="https://iwc.int/about-whales/intro-to-population-status/status-of-whales-graphics/summary-vaquita" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> IWC — Vaquita</a>
+        <a href="https://en.wikipedia.org/wiki/Hawksbill_sea_turtle" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> Wikipedia — Tartaruga-de-pente</a>
+        <a href="https://www.iucn-mtsg.org/statuses" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> IUCN-SSC MTSG — Chelonia mydas</a>
+        <a href="https://www.fisheries.noaa.gov/species/scalloped-hammerhead-shark" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> NOAA Fisheries — Sphyrna lewini</a>
+        <a href="https://repository.library.noaa.gov/view/noaa/39086" target="_blank" rel="noopener"><i class="fa-solid fa-book"></i> Ocean Literacy — 7 princípios (NOAA)</a>
+        <a href="https://unesdoc.unesco.org/ark:/48223/pf0000260721/PDF/260721eng.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-book"></i> Ocean Literacy for All — Toolkit (UNESCO)</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="local-footer">
+    <p>&copy; 2025 · Vida Aquática — Página de educação e estudos</p>
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <script>
+    // Tabs ativas conforme rolagem
+    const tabs = document.querySelectorAll('#tabs a');
+    const sections = [...tabs].map(a => document.querySelector(a.getAttribute('href')));
+    const onScroll = () => {
+      const y = window.scrollY + 120;
+      let activeIndex = 0;
+      sections.forEach((sec, i) => { if (sec && y >= sec.offsetTop) activeIndex = i; });
+      tabs.forEach((a,i)=>a.classList.toggle('active', i===activeIndex));
+    };
+    document.addEventListener('scroll', onScroll);
+
+    // ====== Mapa Ecossistemas (Leaflet) ======
+    const ecoMapEl = document.getElementById('ecoMap');
+    let ecoMap, ecoMarkers = {};
+    if (ecoMapEl && window.L){
+      ecoMap = L.map('ecoMap', { scrollWheelZoom:false }).setView([-23.9,-46.3], 5);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '&copy; OpenStreetMap' }).addTo(ecoMap);
+
+      const points = [
+        { id:'coral',    name:'Recifes de Coral — Abrolhos (BA)',    lat:-18.1,  lng:-39.0,  url:'https://iucn.org/resources/issues-brief/coral-reefs-and-climate-change' },
+        { id:'mangue',   name:'Manguezais — Cananéia/Iguape (SP)',   lat:-25.0,  lng:-47.9,  url:'https://brasilescola.uol.com.br/brasil/mangues.htm' },
+        { id:'pradarias',name:'Pradarias — Cananéia (SP)',           lat:-24.99, lng:-47.9,  url:'#' },
+        { id:'costoes',  name:'Costões — Laje de Santos (SP)',       lat:-24.312,lng:-46.703,url:'https://guiadeareasprotegidas.sp.gov.br/ap/parque-estadual-marinho-laje-de-santos/' },
+        { id:'pelagico', name:'Pelágico — Atlântico Sul (offshore)', lat:-25.5,  lng:-43.0,  url:'https://www.havochvatten.se/en/start.html' }
+      ];
+
+      const group = L.featureGroup();
+      points.forEach(p=>{
+        const m = L.marker([p.lat,p.lng]).addTo(ecoMap)
+          .bindPopup(`<b>${p.name}</b><br><a href='${p.url}' target='_blank' rel='noopener'>Saiba mais</a>`);
+        ecoMarkers[p.id]=m; group.addLayer(m);
+      });
+      ecoMap.fitBounds(group.getBounds(), { padding:[20,20] });
+    }
+
+    // ====== Conteúdo dos ecossistemas (preview em card) ======
+    const ecoContent = {
+      coral: {
+        img:'./imagens/recife-coral.webp',
+        html:`<h3>Recifes de coral</h3>
+              <p>Cidades submarinas de alta biodiversidade. Sensíveis ao <em>aquecimento</em> e à <em>acidificação</em>.</p>
+              <p><a href='https://iucn.org/resources/issues-brief/coral-reefs-and-climate-change' target='_blank' rel='noopener'>IUCN — saiba mais</a></p>`
+      },
+      mangue: {
+        img:'./imagens/manguezais.jpeg',
+        html:`<h3>Manguezais &amp; estuários</h3>
+              <p>Berçários naturais que reduzem erosão e armazenam <em>carbono azul</em>.</p>
+              <p><a href='https://brasilescola.uol.com.br/brasil/mangues.htm' target='_blank' rel='noopener'>Brasil Escola</a></p>`
+      },
+      pradarias: {
+        img:'./imagens/pradarias.webp',
+        html:`<h3>Pradarias de fanerógamas</h3>
+              <p>“Gramados marinhos” que capturam carbono e abrigam juvenis de várias espécies.</p>`
+      },
+      costoes: {
+        img:'./imagens/costoes-rochosos.jpg',
+        html:`<h3>Costões rochosos / plataforma</h3>
+              <p>Mosaicos de algas, esponjas, corais e peixes. Exemplo paulista: <em>Laje de Santos</em>.</p>
+              <p><a href='https://guiadeareasprotegidas.sp.gov.br/ap/parque-estadual-marinho-laje-de-santos/' target='_blank' rel='noopener'>Guia de Áreas Protegidas</a></p>`
+      },
+      pelagico: {
+        img:'./imagens/zonas_pelagic.jpg',
+        html:`<h3>Pelágico e zonas profundas</h3>
+              <p>Cadeias baseadas no plâncton; muitas espécies/processos ainda pouco conhecidos.</p>
+              <p><a href='https://www.havochvatten.se/en/start.html' target='_blank' rel='noopener'>SwAM</a></p>`
+      }
+    };
+
+    const preview   = document.getElementById('ecoPreview');
+    const previewImg= document.getElementById('ecoImg');
+    const previewTxt= document.getElementById('ecoCaption');
+
+    document.querySelectorAll('.eco-btn').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const k = btn.dataset.eco;
+        const c = ecoContent[k]; if(!c) return;
+        previewImg.src = c.img;
+        previewImg.alt = k;
+        previewTxt.innerHTML = c.html;
+        preview.style.display = 'block';
+        preview.scrollIntoView({ behavior:'smooth', block:'nearest' });
+
+        const mk = ecoMarkers[k];
+        if(mk){ ecoMap.setView(mk.getLatLng(), 8, {animate:true}); mk.openPopup(); }
+      });
+    });
+
+    // ====== Checklist progresso ======
+    const checks = document.querySelectorAll('.t');
+    const bar = document.getElementById('pgBar');
+    const updateBar = () => {
+      const total = [...checks].reduce((acc,el)=>acc + (el.checked ? +el.dataset.p : 0), 0);
+      bar.style.width = Math.min(total,100) + '%';
+    };
+    checks.forEach(c=>c.addEventListener('change', updateBar));
+
+    // ====== Quiz ======
+    const quizSubmit = document.getElementById('quizSubmit');
+    const quizScore = document.getElementById('quizScore');
+
+    document.querySelectorAll('.chip').forEach(chip=>{
+      chip.addEventListener('click', ()=>{
+        const parent = chip.closest('.quick');
+        parent.querySelectorAll('.chip').forEach(c=>c.classList.remove('selected','correct','incorrect'));
+        chip.classList.add('selected');
+      })
+    });
+
+    quizSubmit.addEventListener('click', ()=>{
+      let score = 0, total = 0;
+      // Múltipla escolha
+      document.querySelectorAll('.q[data-type="mc"]').forEach(q=>{
+        const checked = q.querySelector('input[type="radio"]:checked');
+        if(!checked) return; total++;
+        if(checked.dataset.correct === 'true') score++;  
+      });
+      // Verdadeiro/Falso
+      document.querySelectorAll('.q[data-type="vf"] .quick').forEach(q=>{
+        total++;
+        const correct = q.dataset.correct;
+        const sel = q.querySelector('.chip.selected');
+        if(sel){
+          const ok = sel.dataset.val === correct;
+          sel.classList.remove('correct','incorrect');
+          sel.classList.add(ok ? 'correct' : 'incorrect');
+          if(ok) score++;
+        }
+      });
+      quizScore.textContent = `Você acertou ${score} de ${total} perguntas.`;
+    });
+  </script>
+</body>
+</html>

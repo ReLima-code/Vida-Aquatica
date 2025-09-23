@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sobre a Vida Marinha — Portal</title>
+  <meta name="description" content="Página temática sobre Vida Marinha: importância, principais ameaças, soluções, exemplos e mapa interativo." />
+  <link rel="stylesheet" href="./css/sobreVidaMarinha.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+  <!-- Leaflet (mapa) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap container">
+      <a class="brand" href="#top">VIDA <span>AQUÁTICA</span></a>
+      <a class="back" href="./index.html"><i class="fa-solid fa-arrow-left"></i> Voltar ao site principal</a>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="inner">
+      <h1>Sobre a Vida Marinha</h1>
+      <p class="lead">A vida marinha abrange organismos que habitam mares e oceanos — do plâncton às baleias azuis. Essa biodiversidade é essencial para o equilíbrio dos ecossistemas e para a manutenção da vida na Terra.</p>
+    </div>
+  </section>
+
+  <!-- sub navegação -->
+  <nav class="subnav" aria-label="Seções desta página">
+    <div class="tabs container" id="tabs">
+      <a href="#intro" class="active">Introdução</a>
+      <a href="#importancia">Importância</a>
+      <a href="#ameacas">Ameaças</a>
+      <a href="#solucoes">Soluções</a>
+      <a href="#exemplos">Exemplos</a>
+      <a href="#referencias">Referências</a>
+    </div>
+  </nav>
+
+  <!-- INTRO -->
+  <section id="intro" class="section">
+    <div class="container grid-2">
+      <div class="card">
+        <h2>O que é a vida marinha?</h2>
+        <p>Inclui plâncton, algas, moluscos, crustáceos, peixes, corais e grandes mamíferos. A diversidade ainda é pouco conhecida em regiões profundas — o que abre espaço para novas descobertas científicas.</p>
+      </div>
+
+      <div class="card">
+        <h2>Galeria</h2>
+        <div class="features" style="grid-template-columns:1fr 1fr">
+          <img src="./imagens/algasmarinhas.png" alt="Algas" style="border-radius:12px"/>
+          <img src="./imagens/peixepalhaço.jpg" alt="Peixes" style="border-radius:12px"/>
+          <img src="./imagens/corais.jpg" alt="Corais" style="border-radius:12px"/>
+          <img src="./imagens/Baleia-Jubarte.webp" alt="BaleiaJubarte" style="border-radius:12px"/>
+        </div>
+      </div>
+
+      <div class="card span-2">
+        <p>A vida marinha ou vida oceânica são as comunidades ecológicas coletivas que abrangem todos os animais aquáticos , plantas , algas , fungos , protistas , microrganismos unicelulares e vírus associados que vivem na água salgada dos habitats marinhos , seja na água do mar de mares e oceanos marginais , ou na água salobra de zonas húmidas costeiras , lagoas , estuários e mares interiores . Em 2023 , mais de 242.000 espécies marinhas foram documentadas, e talvez dois milhões de espécies marinhas ainda estejam por documentar. Uma média de 2.332 novas espécies por ano estão sendo descritas. A vida marinha é estudada cientificamente tanto na biologia marinha quanto na oceanografia biológica...</p>
+         <a href="https://en.wikipedia.org/wiki/Marine_life" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> Saiba mais em Wikipédia</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPORTÂNCIA -->
+  <section id="importancia" class="section">
+    <div class="container">
+      <h2>Importância dos Ecossistemas Marinhos</h2>
+      <div class="grid-2" style="margin-top:14px">
+        <div>
+          <div class="features">
+            <article class="feat" data-title="Regulação do clima">
+              <h3><i class="fa-solid fa-temperature-three-quarters"></i> Regulação do clima</h3>
+              <p>Oceanos absorvem calor e CO₂, ajudando a mitigar efeitos das mudanças climáticas.</p>
+            </article>
+            <article class="feat" data-title="Produção de oxigênio">
+              <h3><i class="fa-solid fa-leaf"></i> Produção de oxigênio</h3>
+              <p>Fitoplâncton realiza fotossíntese e contribui de forma significativa para o O₂ atmosférico.</p>
+            </article>
+            <article class="feat" data-title="Alimento e subsistência">
+              <h3><i class="fa-solid fa-fish"></i> Fonte de alimento e subsistência</h3>
+              <p>Pesca, aquicultura e turismo costeiro sustentam economias e garantem segurança alimentar.</p>
+            </article>
+            <article class="feat" data-title="Serviços ecossistêmicos">
+              <h3><i class="fa-solid fa-shield-halved"></i> Serviços ecossistêmicos</h3>
+              <p>Corais e manguezais protegem costas; correntes e organismos reciclam nutrientes.</p>
+            </article>
+          </div>
+        </div>
+        <aside class="card">
+          <h3 style="margin-bottom:10px">Infográfico (ilustrativo)</h3>
+          <div class="donut" title="Diagrama ilustrativo"></div>
+          <div class="legend">
+            <div class="item"><span class="dot" style="background:#22a6c3"></span> Clima</div>
+            <div class="item"><span class="dot" style="background:#8dd6e9"></span> Oxigênio</div>
+            <div class="item"><span class="dot" style="background:#1d8aa8"></span> Alimento</div>
+            <div class="item"><span class="dot" style="background:#0d3b66"></span> Serviços</div>
+            <p class="note">Representação visual sem escala numérica — um apoio para comunicação em sala/apresentação.</p>
+          </div>
+          <div class="card" style="margin-top:14px">
+            <p style="font-size:.92rem;opacity:.9"><strong>Leituras:</strong> Iberdrola (ODS 14), The Nature Conservancy, 123 Ecos – Ecopédia, Wikipedia.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMEAÇAS -->
+  <section id="ameacas" class="section">
+    <div class="container">
+      <h2>Principais Ameaças à Vida Marinha</h2>
+      <div class="card warn" style="margin-top:12px">
+        <p><i class="fa-solid fa-triangle-exclamation"></i> Esta seção adota um tom mais sério: foco em riscos e prevenção.</p>
+      </div>
+      <div class="accordion">
+        <div class="acc">
+          <button aria-expanded="false"><span><i class="fa-solid fa-recycle"></i> Poluição marinha</span><i class="fa-solid fa-chevron-down"></i></button>
+          <div>
+            <p><strong>Plásticos e microplásticos:</strong> resíduos entram nas cadeias alimentares.</p>
+            <p><strong>Poluentes químicos:</strong> agrotóxicos, metais pesados e esgoto causam toxicidade.</p>
+            <p><strong>Derrames de óleo</strong> e resíduos perigosos causam danos extensos a habitats.</p>
+            <p style="margin-top:8px;font-size:.92rem;opacity:.9">Leituras: 123 Ecos – Ecopédia; Instituto Água Sustentável.</p>
+          </div>
+        </div>
+        <div class="acc">
+          <button aria-expanded="false"><span><i class="fa-solid fa-fish-fins"></i> Sobrepesca e práticas insustentáveis</span><i class="fa-solid fa-chevron-down"></i></button>
+          <div>
+            <p>Exploração sem descanso rebaixa populações e desequilibra ecossistemas.</p>
+            <p style="margin-top:8px;font-size:.92rem;opacity:.9">Leituras: Projeto Bióicos; Iberdrola (ODS 14).</p>
+          </div>
+        </div>
+        <div class="acc">
+          <button aria-expanded="false"><span><i class="fa-solid fa-house-crack"></i> Destruição de habitat</span><i class="fa-solid fa-chevron-down"></i></button>
+          <div>
+            <p><strong>Corais:</strong> branqueamento por aquecimento, poluição e pesca destrutiva.</p>
+            <p><strong>Manguezais:</strong> perda por expansão urbana/agropecuária reduz berçários de espécies.</p>
+          </div>
+        </div>
+        <div class="acc">
+          <button aria-expanded="false"><span><i class="fa-solid fa-temperature-arrow-up"></i> Mudanças climáticas</span><i class="fa-solid fa-chevron-down"></i></button>
+          <div>
+            <p><strong>Aquecimento oceânico</strong> altera distribuição e sobrevivência das espécies.</p>
+            <p><strong>Acidificação</strong> dificulta formação de conchas/esqueletos em corais e moluscos.</p>
+            <p><strong>Desoxigenação</strong> afeta peixes e invertebrados.</p>
+            <p style="margin-top:8px;font-size:.92rem;opacity:.9">Leituras: Wikipedia; UNESCO (programas marinhos).</p>
+          </div>
+        </div>
+        <div class="acc">
+          <button aria-expanded="false"><span><i class="fa-solid fa-dna"></i> Espécies invasoras</span><i class="fa-solid fa-chevron-down"></i></button>
+          <div>
+            <p>Introduzidas por água de lastro ou outros meios, competem, predam e transmitem doenças.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUÇÕES -->
+  <section id="solucoes" class="section">
+    <div class="container">
+      <h2>Medidas de Conservação e Soluções</h2>
+      <div class="grid-2" style="margin-top:12px">
+        <div class="card">
+          <h3>O que governos e organizações podem fazer</h3>
+          <div class="checklist" id="listA">
+            <label class="check"><input type="checkbox"> Criar/fortalecer Áreas Marinhas Protegidas (AMPs).</label>
+            <label class="check"><input type="checkbox"> Fiscalizar pesca e combater poluição e derrames.</label>
+            <label class="check"><input type="checkbox"> Investir em saneamento e gestão de resíduos.</label>
+            <label class="check"><input type="checkbox"> Apoiar restauração de recifes, manguezais e pradarias marinhas.</label>
+          </div>
+          <div class="progress" style="margin-top:10px"><span></span></div>
+        </div>
+        <div class="card">
+          <h3>O que cidadãos podem fazer</h3>
+          <div class="checklist" id="listB">
+            <label class="check"><input type="checkbox"> Reduzir plásticos descartáveis; reutilizar/reciclar.</label>
+            <label class="check"><input type="checkbox"> Consumir pescado de origem responsável.</label>
+            <label class="check"><input type="checkbox"> Participar de mutirões e educação ambiental.</label>
+            <label class="check"><input type="checkbox"> Apoiar ONGs e projetos de conservação.</label>
+          </div>
+          <div class="progress" style="margin-top:10px"><span></span></div>
+          <p style="font-size:.92rem;opacity:.9;margin-top:10px">Leituras: Instituto Marulho Eco; A Rocha (rede internacional).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXEMPLOS -->
+  <section id="exemplos" class="section">
+    <div class="container">
+      <h2>Exemplos e Casos</h2>
+      <div class="cards" style="margin-top:12px">
+        <article class="card">
+          <h3>Triângulo de Coral</h3>
+          <p>Região com altíssima biodiversidade (corais, peixes, manguezais) e vulnerável a pesca destrutiva e mudanças climáticas.</p>
+          <p style="font-size:.92rem;opacity:.9;margin-top:6px">Leitura: Wikipedia.</p>
+        </article>
+        <article class="card">
+          <h3>Década do Oceano</h3>
+          <p>Iniciativa global para ciência que precisamos e oceano que queremos — mobiliza governos, empresas e sociedade.</p>
+          <p style="font-size:.92rem;opacity:.9;margin-top:6px">Leitura: UNESCO / Ocean Decade.</p>
+        </article>
+        <article class="card">
+          <h3>AMPs pelo mundo</h3>
+          <p>Criação/expansão de áreas protegidas vem acelerando em vários países, sinalizando ações concretas de conservação.</p>
+          <p style="font-size:.92rem;opacity:.9;margin-top:6px">Sugestão de busca: “Marine Protected Areas recent”.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Referências / Links -->
+  <section id="referencias" class="section">
+    <div class="container">
+      <h2>Referências e links</h2>
+      <div class="refs" style="margin-top:12px">
+        <a href="https://www.iberdrola.com/sustainability/committed-sustainable-development-goals/sdg-14-life-below-water" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> Iberdrola — ODS 14: Vida na água</a>
+        <a href="https://www.nature.org/en-us/about-us/where-we-work/latin-america/brazil/" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> The Nature Conservancy — Brasil</a>
+        <a href="https://123ecos.com.br/ecopedia/" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> 123 Ecos — Ecopédia</a>
+        <a href="https://www.aguasustentavel.org.br/" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> Instituto Água Sustentável</a>
+        <a href="https://www.bioicos.org.br/" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> Projeto Bióicos</a>
+        <a href="https://arocha.org/pt/" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> A Rocha (rede internacional)</a>
+        <a href="https://www.marulhoeco.org/" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> Instituto Marulho Eco</a>
+        <a href="https://whc.unesco.org/en/marine-programme/" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> UNESCO — Programa Marinho</a>
+        <a href="https://oceandecade.org/" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> United Nations — Ocean Decade</a>
+        <a href="https://pt.wikipedia.org/wiki/Mar" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> Wikipedia — Mar</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="local-footer">
+    <p>&copy; 2025 — Página temática para o portal Vida Aquática.</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+  <script>
+    // Tabs ativas conforme rolagem
+    const tabs = document.querySelectorAll('#tabs a');
+    const sections = [...tabs].map(a => document.querySelector(a.getAttribute('href')));
+    const onScroll = () => {
+      const y = window.scrollY + 100; // offset
+      sections.forEach((sec, i) => {
+        const top = sec.offsetTop, bottom = top + sec.offsetHeight;
+        if (y >= top && y < bottom) {
+          tabs.forEach(t => t.classList.remove('active'));
+          tabs[i].classList.add('active');
+        }
+      });
+    }; window.addEventListener('scroll', onScroll);
+
+    // Cards expandíveis (Importância)
+    document.querySelectorAll('.feat').forEach(f => {
+      f.addEventListener('click', () => f.classList.toggle('open'))
+    });
+
+    // Accordion (Ameaças)
+    document.querySelectorAll('.acc > button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const acc = btn.parentElement; const open = acc.classList.contains('open');
+        document.querySelectorAll('.acc').forEach(a => a.classList.remove('open'));
+        if (!open) acc.classList.add('open');
+      });
+    });
+
+    // Checklist progresso
+    function bindProgress(list){
+      const box = document.querySelector(list);
+      if(!box) return; const bar = box.parentElement.querySelector('.progress > span');
+      const inputs = box.querySelectorAll('input[type="checkbox"]');
+      const update = () => { const done = [...inputs].filter(i => i.checked).length; bar.style.width = (done/inputs.length*100)+'%'; };
+      inputs.forEach(i => i.addEventListener('change', update)); update();
+    }
+    bindProgress('#listA'); bindProgress('#listB');
+
+    // Leaflet Map (exemplo litoral SP)
+    try{
+      const map = L.map('map',{ scrollWheelZoom:false }).setView([-23.96,-46.33], 8); // Baixada Santista approx
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '&copy; OpenStreetMap' }).addTo(map);
+      const pts = [
+        { name:'Santos / Baixada', lat:-23.964, lng:-46.333, desc:'Ações de limpeza e educação costeira.' },
+        { name:'Ilhabela', lat:-23.778, lng:-45.358, desc:'AMPs costeiras e turismo de observação responsável.' },
+        { name:'Ubatuba', lat:-23.433, lng:-45.083, desc:'Pesquisa, educação e trilhas subaquáticas.' }
+      ];
+      pts.forEach(p => L.marker([p.lat,p.lng]).addTo(map).bindPopup(`<b>${p.name}</b><br>${p.desc}`));
+    }catch(e){ console.warn('Leaflet não carregou.'); }
+  </script>
+</body>
+</html>

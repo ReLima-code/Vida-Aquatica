@@ -1,0 +1,365 @@
+:root{
+  --ocean-900:#061626; 
+  --ocean-800:#0a2540; 
+  --ocean-700:#0d3b66; 
+  --ocean-600:#17809b; 
+  --ocean-500:#22a6c3; 
+  --ocean-300:#8dd6e9;
+  --sand-50:#eef4f6; 
+  --sand-100:#dfe8eb; 
+  --ink:#0b1320; 
+  --white:#fff; 
+  --coral-500:#ff6b6b;
+  --radius-lg:18px; 
+  --radius-md:12px; 
+  --maxw:1200px; 
+  --shadow-lg:0 18px 48px rgba(0,0,0,.28); 
+  --shadow-md:0 10px 26px rgba(0,0,0,.18);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:linear-gradient(180deg,var(--ocean-900),#05121f 60%,#04101a);
+  color:var(--sand-50);
+  line-height:1.65
+}
+a{
+  color:inherit;
+  text-decoration:none
+}
+img{
+  max-width:100%;
+  display:block
+}
+.container{
+  width:min(100%,var(--maxw));
+  margin-inline:auto;
+  padding-inline:clamp(16px,4vw,28px)
+}
+.section{padding-block:clamp(48px,8vw,96px)}
+h1,h2,h3{line-height:1.2}
+h2{
+  font-size:clamp(1.4rem,2.4vw,2.2rem);
+  font-weight:900;
+  letter-spacing:.3px
+}
+
+/* Topbar local */
+.topbar{
+  position:sticky;
+  top:0;z-index:50;
+  background:rgba(0,0,0,.55);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(255,255,255,.08)
+}
+.topbar .wrap{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:64px
+}
+.brand{
+  font-weight:900;
+  letter-spacing:.6px
+}
+.brand span{color:var(--ocean-500)}
+.back{
+  display:inline-flex;
+  gap:10px;
+  align-items:center;
+  font-weight:700;
+  color:#cfe5ea
+}
+
+/* Hero */
+.hero{
+  position:relative;
+  min-height:58vh;
+  display:grid;
+  place-items:center;
+  background:#0A0D1C url('../imagens/praiamar.avif') center/cover no-repeat
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.50),rgba(0,0,0,.30) 50%,rgba(0,0,0,.62))
+}
+.hero .inner{
+  position:relative;
+  z-index:1;
+  width:min(100%,var(--maxw));
+  padding-inline:clamp(16px,4vw,28px)
+}
+.hero h1{
+  font-size:clamp(1.8rem,6vw,3rem);
+  font-weight:900;
+  text-shadow:0 10px 34px rgba(0,0,0,.45)
+}
+.hero p.lead{
+  max-width:860px;
+  margin-top:12px;
+  background:linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,.10));
+  border:1px solid rgba(255,255,255,.20);
+  backdrop-filter:blur(10px);
+  padding:16px;
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-md)
+}
+
+/* Subnav */
+.subnav{
+  position:sticky;
+  top:64px;
+  z-index:45;
+  background:rgba(5,18,31,.88);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(255,255,255,.06)
+}
+.tabs{
+  display:flex;
+  gap:14px;
+  overflow:auto;
+  padding:12px
+}
+.tabs a{
+  white-space:nowrap;
+  font-weight:800;
+  opacity:.88;
+  border:1px solid rgba(255,255,255,.14);
+  padding:8px 12px;
+  border-radius:999px
+}  
+.tabs a.active,.tabs a:hover{background:#0f2236}
+
+/* Card genérico */
+.card{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--radius-lg);
+  padding:clamp(16px,2.4vw,24px);
+  box-shadow:var(--shadow-md)
+}
+
+/* Mares/Rios/Oceanos */
+.def-grid{
+  display:grid;
+  gap:14px;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  margin-top:12px
+}
+.def{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:12px;
+  padding:12px
+}
+.def h3{
+  font-size:1.05rem;
+  margin-bottom:6px
+}
+
+/* Ecossistemas */
+.eco-grid{
+  display:grid;
+  gap:16px;
+  grid-template-columns:repeat(2,minmax(0,1fr))
+}
+.eco-btns{
+  display:grid;
+  gap:10px
+}
+.eco-btn{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:12px;padding:12px;
+  cursor:pointer
+}
+.eco-btn:hover{background:rgba(255,255,255,.1)}
+#ecoMap{
+  height:380px;
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:var(--shadow-md);
+  position:relative;
+  z-index:1
+}
+
+/* Preview ao lado do texto e acima do mapa */
+#ecoPreview{
+  position:relative;
+  z-index:3
+}
+#ecoPreview figure{
+  display:grid;
+  grid-template-columns:1fr 1fr;  /* imagem | texto */
+  gap:14px;
+  align-items:center;
+}
+#ecoPreview img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:12px
+}
+#ecoCaption{
+  line-height:1.6;
+  opacity:.95
+}
+
+/* Curiosidades */
+.cards{
+  display:grid;
+  gap:16px;grid-template-columns:repeat(3,minmax(0,1fr))
+}
+.why{
+  margin-top:6px;
+  font-size:.94rem;
+  opacity:.92
+}
+
+/* Risco */
+.risk-grid{
+  display:grid;
+  gap:16px;
+  grid-template-columns:repeat(3,minmax(0,1fr))
+}
+.risk{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:12px;
+  padding:14px
+}
+.tag{
+  display:inline-block;
+  border:1px solid rgba(255,255,255,.22);
+  padding:2px 8px;
+  border-radius:999px;
+  font-size:.82rem;
+  margin-top:6px
+}
+
+/* Ações pessoais */
+.checklist{
+  display:grid;
+  gap:10px;
+  margin-top:6px
+}
+.check{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:12px;
+  padding:12px
+}
+.progress{
+  height:10px;
+  border-radius:99px;
+  background:rgba(255,255,255,.1);
+  overflow:hidden
+}
+.progress > span{
+  display:block;
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,var(--ocean-500),#8de3ff);
+  transition:width .25s
+}
+
+/* Quiz */
+.quiz{
+  display:grid;
+  gap:14px
+}
+.q{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:12px;
+  padding:12px
+}
+.quiz button{
+  margin-top:8px;
+  background:var(--sand-100);
+  color:#0f1720;
+  font-weight:800;
+  padding:10px 14px;
+  border:0;
+  border-radius:10px;
+  cursor:pointer
+}
+.chips{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:8px
+}
+.chip{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  border:1px solid rgba(255,255,255,.22);
+  padding:8px 12px;border-radius:999px;
+  cursor:pointer;
+  user-select:none
+}
+.chip i{opacity:.9}
+.chip.selected{background:rgba(255,255,255,.12)}
+.chip.correct{outline:2px solid #22a6c3}
+.chip.incorrect{outline:2px solid #ff6b6b}
+
+.scorebox{
+  margin-top:10px;
+  font-weight:800
+}
+.quiz .q h3{
+  display:flex;
+  align-items:center;
+  gap:8px
+}
+
+/* Refs */
+.refs{
+  columns:2;
+  column-gap:22px
+}
+.refs a{
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  break-inside:avoid;
+  margin-bottom:10px
+}
+
+.local-footer{
+  background:#0a0f19;
+  border-top:1px solid rgba(255,255,255,.08);
+  text-align:center;
+  padding:18px;
+  color:#9fb3c8
+}
+
+/* Responsivo */
+@media (max-width:1024px){
+  .def-grid{grid-template-columns:1fr 1fr}
+  .eco-grid{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr 1fr}
+  .risk-grid{grid-template-columns:1fr 1fr}
+  #ecoPreview figure{grid-template-columns:1fr} /* em telas menores, imagem acima do texto */
+}
+@media (max-width:640px){
+  .def-grid{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr}
+  .risk-grid{grid-template-columns:1fr}
+}
