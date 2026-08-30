@@ -198,19 +198,34 @@
 
   <!-- CONTATO -->
   <section id="contato" class="section-contato">
-    <div class="container">
-      <h2>Contato e Conexões</h2>
+    <div class="container contato-wrap">
+
+      <div class="contato-intro">
+        <h2 class="contato-title">Fale<br>com a<br>gente</h2>
+        <p class="contato-lead">Quer indicar uma ONG, propor uma parceria ou só tirar uma dúvida sobre o projeto? Escreva pra gente ao lado.</p>
+
+        <div class="contato-links">
+          <h3>Conectar com ONGs parceiras</h3>
+          <ul>
+            <li><a href="https://www.instagram.com/ongvaleverde/" target="_blank" rel="noopener">Vale Verde</a></li>
+            <li><a href="https://www.ecovilasustentar.eco.br/" target="_blank" rel="noopener">Eco Villa (Ecovila Sustentar)</a></li>
+            <li><a href="https://institutoargonauta.org/new/fale-conosco/" target="_blank" rel="noopener">Instituto Argonauta</a></li>
+            <li><a href="https://seashepherd.org.br/contato/" target="_blank" rel="noopener">Sea Shepherd Brasil</a></li>
+            <li><a href="https://mirpurifoundation.org/contact/" target="_blank" rel="noopener">Mirpuri Foundation</a></li>
+          </ul>
+        </div>
+      </div>
 
       <!-- IMPORTANTE: o "action" abaixo ainda é um endereço de exemplo.
            Antes de publicar o site, trocar pelo endpoint criado no Formspree. -->
-      <form id="contactForm" action="https://formspree.io/f/mljegedy" method="POST" novalidate>
+      <form id="contactForm" class="contato-form" action="https://formspree.io/f/SEU_ENDPOINT" method="POST" novalidate>
         <div class="form-row">
           <div class="field">
-            <label for="name">Seu nome</label>
+            <label for="name">Nome</label>
             <input id="name" name="name" type="text" placeholder="Seu nome" autocomplete="name" required minlength="2" />
           </div>
           <div class="field">
-            <label for="email">Seu e-mail</label>
+            <label for="email">E-mail</label>
             <input id="email" name="email" type="email" placeholder="Seu e-mail" autocomplete="email" required />
           </div>
         </div>
@@ -221,7 +236,7 @@
         </div>
 
         <div class="field">
-          <label for="message">Sua mensagem</label>
+          <label for="message">Mensagem</label>
           <textarea id="message" name="message" placeholder="Escreva sua mensagem..." required minlength="10"></textarea>
           <small class="help">Mínimo de 10 caracteres.</small>
         </div>
@@ -247,16 +262,6 @@
         </noscript>
       </form>
 
-      <aside class="quick-links">
-        <h3>Conectar com ONGs parceiras</h3>
-        <ul>
-          <li><a href="https://www.instagram.com/ongvaleverde/" target="_blank" rel="noopener">Vale Verde</a></li>
-          <li><a href="https://www.ecovilasustentar.eco.br/" target="_blank" rel="noopener">Eco Villa (Ecovila Sustentar)</a></li>
-          <li><a href="https://institutoargonauta.org/new/fale-conosco/" target="_blank" rel="noopener">Instituto Argonauta</a></li>
-          <li><a href="https://seashepherd.org.br/contato/" target="_blank" rel="noopener">Sea Shepherd Brasil</a></li>
-          <li><a href="https://mirpurifoundation.org/contact/" target="_blank" rel="noopener">Mirpuri Foundation</a></li>
-        </ul>
-      </aside>
     </div>
   </section>
 
