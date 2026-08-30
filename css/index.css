@@ -12,6 +12,7 @@ html{ scroll-behavior:smooth; }
   --sand-100:#dfe8eb;
   --ink:#0b1320;
   --white:#fff;
+  --coral-500:#ff6b6b;
   --radius-lg:18px;
   --radius-md:12px;
   --shadow-lg:0 14px 40px rgba(0,0,0,.25);
@@ -387,131 +388,148 @@ h2{
 .acoes-info p{ margin-bottom: 10px }
 .section-acao h2{ margin-bottom: 12px }
 
-/* ========= Contato ========= */
+/* ========= Contato (estilo minimalista) ========= */
 .section-contato{
-  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-  border-top: 1px solid rgba(255,255,255,.10);
-  padding-block: clamp(24px, 5vw, 56px);
+  padding-block: clamp(56px, 10vw, 120px);
+  border-top: 1px solid rgba(255,255,255,.08);
 }
-.section-contato .container{ max-width: 1080px; margin-inline:auto; padding-inline: clamp(12px, 3vw, 24px); display: grid; gap: 28px; }
-.section-contato h2{ text-align:center; margin-bottom: 8px; }
-
-/* layout do formulário */
-#contactForm{
-  width:min(100%, 640px);
-  margin-inline:auto;
-  display:flex; 
-  flex-direction:column; 
-  gap:14px;
-}
-.form-row{ display:grid; grid-template-columns:1fr; gap:12px; }
-@media (min-width: 640px){ .form-row{ grid-template-columns:1fr 1fr; } }
-
-.field label{ 
-  display:block; 
-  font-weight:700; 
-  margin-bottom:6px; 
-  color: var(--sand-50); 
-  opacity:.92;
+.contato-wrap{
+  display:grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(32px, 6vw, 80px);
+  align-items:start;
 }
 
-/* Inputs (mantém sua base e melhora foco/acessibilidade) */
-#contactForm input, #contactForm textarea{
-  padding: 12px 14px; 
-  border-radius: 10px; 
-  border:1px solid rgba(255,255,255,.18);
-  background: rgba(255,255,255,.06); 
-  color: var(--sand-50); 
+/* Coluna esquerda: título gigante + texto + links de ONGs */
+.contato-title{
+  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  font-weight: 900;
+  line-height: 0.98;
+  letter-spacing: -1px;
+  color: var(--sand-50);
+  margin-bottom: 20px;
+}
+.contato-lead{
+  color:#cfe5ea;
+  max-width: 34ch;
+  font-size: 1.02rem;
+  margin-bottom: clamp(28px, 5vw, 48px);
+}
+.contato-links h3{
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--sand-50);
+  opacity: .8;
+  margin-bottom: 12px;
+}
+.contato-links ul{
+  list-style:none;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+.contato-links a{
+  display:inline-block;
+  padding: 8px 0;
+  color:#cfe5ea;
+  text-decoration:none;
+  border-bottom: 1px solid rgba(255,255,255,.10);
+  transition: color .2s ease, border-color .2s ease;
+}
+.contato-links a:hover, .contato-links a:focus-visible{
+  color: var(--coral-500, #ff6b6b);
+  border-color: var(--coral-500, #ff6b6b);
+}
+
+/* Coluna direita: formulário sem caixas, só linha embaixo */
+.contato-form{
+  display:flex;
+  flex-direction:column;
+  gap: 28px;
+}
+.form-row{ display:grid; grid-template-columns:1fr; gap:24px; }
+@media (min-width: 560px){ .form-row{ grid-template-columns:1fr 1fr; } }
+
+.field label{
+  display:block;
+  font-size:.85rem;
+  font-weight:600;
+  letter-spacing:.2px;
+  margin-bottom:8px;
+  color: var(--sand-50);
+  opacity:.7;
+}
+
+.contato-form input,
+.contato-form textarea{
+  width:100%;
+  padding: 8px 2px 12px;
+  border:0;
+  border-bottom: 1px solid rgba(255,255,255,.22);
+  background: transparent;
+  color: var(--sand-50);
+  font-size: 1rem;
+  font-family: inherit;
   outline: none;
+  transition: border-color .2s ease;
 }
-#contactForm input::placeholder, #contactForm textarea::placeholder{ color:#cfe5ea; opacity:.9; }
-#contactForm textarea{ min-height: 140px; resize: vertical; }
+.contato-form input::placeholder,
+.contato-form textarea::placeholder{ color:#7f97a3; }
+.contato-form textarea{ min-height: 90px; resize: vertical; }
 
-#contactForm input:focus-visible, #contactForm textarea:focus-visible{
-  border-color: rgba(255,255,255,.32);
-  box-shadow: 0 0 0 3px rgba(34,166,195,.35), inset 0 0 0 1px rgba(255,255,255,.15);
+.contato-form input:focus-visible,
+.contato-form textarea:focus-visible{
+  border-color: var(--ocean-500);
 }
 
 /* checkbox */
-.checkbox{ display:flex; align-items:center; gap:10px; color: var(--sand-50); opacity:.9; font-size:.95rem; }
-.checkbox input{ accent-color: var(--ocean-500); }
+.checkbox{ display:flex; align-items:flex-start; gap:10px; color:#cfe5ea; opacity:.85; font-size:.92rem; }
+.checkbox input{ accent-color: var(--ocean-500); margin-top:3px; }
 
-/* botão com estado de envio */
+/* botão de enviar: pill sólido, sem gradiente, estilo clean */
 #sendBtn{
-  background: var(--sand-100); 
-  color:#0f1720; 
-  font-weight:800;
-  padding: 12px 14px; 
-  border:0; 
-  border-radius: 10px; 
-  cursor:pointer; 
-  transition:.25s;
+  align-self:flex-start;
+  background: var(--sand-50);
+  color:#0b1320;
+  font-weight:700;
+  padding: 12px 28px;
+  border:0;
+  border-radius: 999px;
+  cursor:pointer;
+  transition: transform .15s ease, background-color .2s ease;
   display:inline-flex; align-items:center; gap:10px;
 }
-#sendBtn:hover{ filter: brightness(.92); }
-.is-sending #sendBtn{ opacity:.85; cursor:progress; }
+#sendBtn:hover{ transform: translateY(-1px); background:#fff; }
+.is-sending #sendBtn{ opacity:.7; cursor:progress; }
 .spinner{
-  display:none; width:16px; height:16px; border-radius:50%;
-  border:2px solid rgba(0,0,0,.15); border-top-color:#0f1720;
+  display:none; width:14px; height:14px; border-radius:50%;
+  border:2px solid rgba(0,0,0,.2); border-top-color:#0b1320;
   animation: spin 1s linear infinite;
 }
 .is-sending .spinner{ display:inline-block; }
 @keyframes spin { to { transform: rotate(360deg);} }
 
 /* feedback de sucesso/erro */
-.feedback{ 
-  min-height: 24px; 
-  font-size:.95rem; 
-  padding: 6px 8px; 
-  border-radius: 8px; 
-  display:inline-block;
+.feedback{
+  min-height: 20px;
+  font-size:.9rem;
 }
-.feedback.ok{
-   background: rgba(34,197,94,.12); 
-   color: #b4f5c6; 
-   border:1px solid rgba(34,197,94,.25); 
-}
-
-.feedback.err{
-   background: rgba(239,68,68,.12); 
-   color: #fecaca; 
-   border:1px solid rgba(239,68,68,.25); 
-}
+.feedback.ok{ color: #8ce8a8; }
+.feedback.err{ color: #ff9d9d; }
 
 /* honeypot escondido */
 .hp{ position:absolute !important; left:-10000px !important; opacity:0 !important; }
 
-/* links rápidos para ONGs */
-.quick-links{
-   width:min(100%, 640px);
-    margin-inline:auto; 
-}
-.quick-links h3{
-  font-size:1.05rem; 
-  margin: 6px 0 8px; 
-  opacity:.9; 
-}
-.quick-links ul{
-  list-style:none; 
-  display:grid; 
-  grid-template-columns:1fr; 
-  gap:6px; padding:0; 
-}
-@media (min-width: 560px){.quick-links ul{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
-.quick-links a{
-   color: #fff; 
-   text-decoration: none; 
-   opacity:.9; 
-}
-.quick-links a:hover, .quick-links a:focus-visible{
-   color:#22a6c3; 
-   text-decoration: underline; 
+.noscript{
+  margin-top:10px;
+  font-size:.9rem;
+  opacity:.8;
+  color:#cfe5ea;
 }
 
-.noscript{ 
-  margin-top:10px; 
-  font-size:.95rem; 
-  opacity:.9; 
+@media (max-width: 860px){
+  .contato-wrap{ grid-template-columns: 1fr; }
 }
 
 
