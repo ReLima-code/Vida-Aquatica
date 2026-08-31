@@ -12,6 +12,13 @@ if (menuToggle) {
 // Cada ONG tem uma "key" que também aparece no atributo data-key do card,
 // no HTML. É assim que ligamos o botão "Ver no mapa" ao marcador certo.
 const ongPoints = {
+  acaju: {
+    name: 'ACAJU — Associação Caiçara Juqueriquerê (Caraguatatuba)',
+    lat: -23.6203,
+    lng: -45.4297,
+    desc: 'Preservação do rio Juqueriquerê e do manguezal, com mutirões de limpeza e educação ambiental desde 2000.',
+    site: 'https://www.instagram.com/acajucaraguatatuba'
+  },
   argonauta: {
     name: 'Instituto Argonauta (Ubatuba)',
     lat: -23.433,
