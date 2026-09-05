@@ -13,10 +13,10 @@ if (menuToggle) {
 // no HTML. É assim que ligamos o botão "Ver no mapa" ao marcador certo.
 const ongPoints = {
   acaju: {
-    name: 'ACAJU — Associação Caiçara Juqueriquerê (Caraguatatuba)',
+    name: 'ACAJU — Associação Caiçara Juqueriquerê (zona sul de Caraguatatuba)',
     lat: -23.6203,
     lng: -45.4297,
-    desc: 'Preservação do rio Juqueriquerê e do manguezal, com mutirões de limpeza e educação ambiental desde 2000.',
+    desc: 'Reconstrução da cultura caiçara e preservação do rio Juqueriquerê: mutirões, educação ambiental e passeios ecoeducativos.',
     site: 'https://www.instagram.com/acajucaraguatatuba'
   },
   argonauta: {
